@@ -19,6 +19,10 @@
 		1069FDD115810E4B00E36A7C /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDCF15810E4B00E36A7C /* MasterViewController_iPad.xib */; };
 		1069FDD415810E4B00E36A7C /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDD215810E4B00E36A7C /* DetailViewController_iPhone.xib */; };
 		1069FDD715810E4B00E36A7C /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDD515810E4B00E36A7C /* DetailViewController_iPad.xib */; };
+		F2AE23441587A6C700C5226B /* IconLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE23431587A6C700C5226B /* IconLoader.m */; };
+		F2AE23471587A83100C5226B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE23461587A83100C5226B /* CFNetwork.framework */; };
+		F2AE234A1587A8A400C5226B /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE23491587A8A400C5226B /* ParseOperation.m */; };
+		F2AE234D1587B63400C5226B /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE234C1587B63400C5226B /* AppRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,13 @@
 		1069FDD015810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
 		1069FDD315810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		1069FDD615810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		F2AE23421587A6C700C5226B /* IconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconLoader.h; sourceTree = "<group>"; };
+		F2AE23431587A6C700C5226B /* IconLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconLoader.m; sourceTree = "<group>"; };
+		F2AE23461587A83100C5226B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F2AE23481587A8A400C5226B /* ParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
+		F2AE23491587A8A400C5226B /* ParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseOperation.m; sourceTree = "<group>"; };
+		F2AE234B1587B63400C5226B /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
+		F2AE234C1587B63400C5226B /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AE23471587A83100C5226B /* CFNetwork.framework in Frameworks */,
 				1069FDB515810E4B00E36A7C /* UIKit.framework in Frameworks */,
 				1069FDB715810E4B00E36A7C /* Foundation.framework in Frameworks */,
 				1069FDB915810E4B00E36A7C /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +88,7 @@
 		1069FDB315810E4B00E36A7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2AE23461587A83100C5226B /* CFNetwork.framework */,
 				1069FDB415810E4B00E36A7C /* UIKit.framework */,
 				1069FDB615810E4B00E36A7C /* Foundation.framework */,
 				1069FDB815810E4B00E36A7C /* CoreGraphics.framework */,
@@ -86,6 +99,8 @@
 		1069FDBA15810E4B00E36A7C /* Lecture6 */ = {
 			isa = PBXGroup;
 			children = (
+				F2AE234B1587B63400C5226B /* AppRecord.h */,
+				F2AE234C1587B63400C5226B /* AppRecord.m */,
 				1069FDC315810E4B00E36A7C /* AppDelegate.h */,
 				1069FDC415810E4B00E36A7C /* AppDelegate.m */,
 				1069FDC615810E4B00E36A7C /* MasterViewController.h */,
@@ -97,6 +112,10 @@
 				1069FDD215810E4B00E36A7C /* DetailViewController_iPhone.xib */,
 				1069FDD515810E4B00E36A7C /* DetailViewController_iPad.xib */,
 				1069FDBB15810E4B00E36A7C /* Supporting Files */,
+				F2AE23421587A6C700C5226B /* IconLoader.h */,
+				F2AE23431587A6C700C5226B /* IconLoader.m */,
+				F2AE23481587A8A400C5226B /* ParseOperation.h */,
+				F2AE23491587A8A400C5226B /* ParseOperation.m */,
 			);
 			path = Lecture6;
 			sourceTree = "<group>";
@@ -181,6 +200,9 @@
 				1069FDC515810E4B00E36A7C /* AppDelegate.m in Sources */,
 				1069FDC815810E4B00E36A7C /* MasterViewController.m in Sources */,
 				1069FDCB15810E4B00E36A7C /* DetailViewController.m in Sources */,
+				F2AE23441587A6C700C5226B /* IconLoader.m in Sources */,
+				F2AE234A1587A8A400C5226B /* ParseOperation.m in Sources */,
+				F2AE234D1587B63400C5226B /* AppRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +340,7 @@
 				1069FDDC15810E4B00E36A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

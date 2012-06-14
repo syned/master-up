@@ -12,6 +12,8 @@
 
 @interface MasterViewController : UITableViewController
 
+-(void)setRows:(NSArray *)rows;
+
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 @end

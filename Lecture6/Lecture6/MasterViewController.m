@@ -31,6 +31,11 @@
     }
     return self;
 }
+
+-(void)setRows:(NSMutableArray *)rows
+{
+    _objects = [[NSMutableArray alloc] initWithArray: rows];
+}
 							
 - (void)dealloc
 {

@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
-
-#import "MasterViewController.h"
-
 #import "DetailViewController.h"
+
+
+static NSString *const TopPaidAppsFeed = 
+@"http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=75/xml";
+
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
 @synthesize splitViewController = _splitViewController;
+
+@synthesize appRecords = _appRecords;
+@synthesize appListData = _appListData;
+@synthesize queue = _queue;
+@synthesize appListFeedConnection = _appListFeedConnection;
 
 - (void)dealloc
 {
@@ -38,7 +45,7 @@
     } 
     else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) 
     {
-        MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil] autorelease];
+        masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil] autorelease];
         UINavigationController *masterNavigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
         
         DetailViewController *detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil] autorelease];
@@ -54,7 +61,49 @@
     }
     
     [self.window makeKeyAndVisible];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:TopPaidAppsFeed]];
+    
+    self.appListFeedConnection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
     return YES;
+}
+
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    self.appListData = [NSMutableData data];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_appListData appendData:data];
+}
+
+-(void)didFinishParsing:(NSArray *)appList
+{
+    [self performSelectorOnMainThread:@selector(handleLoadedApps:) withObject:appList waitUntilDone:NO];
+    
+    self.queue = nil;
+}
+
+-(void)handleLoadedApps:(NSArray *)loadedApps
+{
+    self.appRecords = [NSArray arrayWithArray:loadedApps];
+//    [self.appRecords addObjectsFromArray:loadedApps];
+    NSLog(@"%@", self.appRecords);
+    
+    [masterViewController setRows:self.appRecords];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    self.appListFeedConnection = nil;
+    NSString* output = [[NSString alloc]initWithData:_appListData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", output);
+    
+    ParseOperation *parser = [[ParseOperation alloc] initWithData:_appListData delegate:self];
+    _queue = [[NSOperationQueue alloc] init];
+    [_queue addOperation:parser];
+    [parser release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
