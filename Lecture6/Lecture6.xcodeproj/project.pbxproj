@@ -19,6 +19,7 @@
 		1069FDD115810E4B00E36A7C /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDCF15810E4B00E36A7C /* MasterViewController_iPad.xib */; };
 		1069FDD415810E4B00E36A7C /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDD215810E4B00E36A7C /* DetailViewController_iPhone.xib */; };
 		1069FDD715810E4B00E36A7C /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1069FDD515810E4B00E36A7C /* DetailViewController_iPad.xib */; };
+		C47929DD158A2207005512C7 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C47929DC158A2207005512C7 /* Placeholder.png */; };
 		F2AE23441587A6C700C5226B /* IconLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE23431587A6C700C5226B /* IconLoader.m */; };
 		F2AE23471587A83100C5226B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE23461587A83100C5226B /* CFNetwork.framework */; };
 		F2AE234A1587A8A400C5226B /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE23491587A8A400C5226B /* ParseOperation.m */; };
@@ -44,6 +45,7 @@
 		1069FDD015810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
 		1069FDD315810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		1069FDD615810E4B00E36A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		C47929DC158A2207005512C7 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		F2AE23421587A6C700C5226B /* IconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconLoader.h; sourceTree = "<group>"; };
 		F2AE23431587A6C700C5226B /* IconLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconLoader.m; sourceTree = "<group>"; };
 		F2AE23461587A83100C5226B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 		1069FDBA15810E4B00E36A7C /* Lecture6 */ = {
 			isa = PBXGroup;
 			children = (
+				C47929DC158A2207005512C7 /* Placeholder.png */,
 				F2AE234B1587B63400C5226B /* AppRecord.h */,
 				F2AE234C1587B63400C5226B /* AppRecord.m */,
 				1069FDC315810E4B00E36A7C /* AppDelegate.h */,
@@ -186,6 +189,7 @@
 				1069FDD115810E4B00E36A7C /* MasterViewController_iPad.xib in Resources */,
 				1069FDD415810E4B00E36A7C /* DetailViewController_iPhone.xib in Resources */,
 				1069FDD715810E4B00E36A7C /* DetailViewController_iPad.xib in Resources */,
+				C47929DD158A2207005512C7 /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

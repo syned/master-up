@@ -32,9 +32,10 @@
     return self;
 }
 
--(void)setRows:(NSMutableArray *)rows
+-(void)setRows:(NSArray *)rows
 {
     _objects = [[NSMutableArray alloc] initWithArray: rows];
+    [self.tableView reloadData];
 }
 							
 - (void)dealloc
@@ -52,6 +53,7 @@
 
     UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
     self.navigationItem.rightBarButtonItem = addButton;
+    self.tableView.rowHeight = 60;
 }
 
 - (void)viewDidUnload
@@ -98,11 +100,20 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    AppRecord *object = [_objects objectAtIndex:indexPath.row];
+    if (object.appIcon == nil)
+    {
+//        NSURL *url = [NSURL URLWithString:object.appURLString];
+        object.appIcon = [UIImage imageNamed:@"Placeholder.png"];
+    }
+    
+    cell.textLabel.text = object.appName;
+    cell.detailTextLabel.text = object.artist;
+    cell.imageView.image = object.appIcon;
+    
     return cell;
 }
 
